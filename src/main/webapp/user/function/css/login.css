@@ -1,0 +1,31 @@
+/* *{
+	margin: 100px;
+	padding: 100px;
+	
+} */
+body {
+	/* height: 100%;
+    width: 100%; */
+	background: url(../img/shop1.jpg);
+	background-size:cover;
+}
+.login{
+	width: 400px;
+	height: 260px;
+	padding: 13px;
+
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: -200px;
+	margin-top: -200px;
+
+	background-color: rgba(240, 255, 255, 0.5);
+
+	border-radius: 10px;
+	text-align: center;
+}
+.login_show{
+	position: relative;
+	top: 80px;
+}

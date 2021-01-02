@@ -1,0 +1,42 @@
+* {
+            margin: 0px;
+            padding: 0px;
+            text-decoration: none;
+            list-style: none;
+        }
+
+        .shopImg {
+            margin-left: 500px;
+            vertical-align: middle;
+            width: 468px;
+            height: 468px;
+        }
+
+        .text {
+
+            margin-left: 500px;
+            width: 400px;
+            height: 600px;
+        }
+
+        .text p {
+            color: red;
+        }
+
+        .money {
+            font-size: 24px;
+            color: #FF0036;
+        }
+        .buy{
+
+            background-color: #ffeded;
+            border: 1px solid #FF0036;
+            color: #FF0036;
+            width: 178px;
+            height: 38px;
+            text-align: center;
+            line-height: 38px;
+        }
+        .buy a{
+
+        }
