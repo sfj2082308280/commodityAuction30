@@ -13,6 +13,7 @@ public class UserDao {
         String sql="select user_id,user_account,user_password,user_idCard,user_phone,user_address from tb_user where user_account=? and user_password=?";
         return DBUtils.getSingleObj(User.class,sql,account,password);
     }
+
     public Integer getUserAccountNum(String account) {
         String sql="select count(*) from tb_user where user_account = ?";
         Integer count=DBUtils.getCount(sql,account);

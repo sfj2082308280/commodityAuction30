@@ -30,6 +30,10 @@ public class CommodityDao {
         String sql="select commodity_id,buyer_id,seller_id,commodity_name,commodity_introduce,commodity_deposit,commodity_price,commodity_startTime,commodity_endTime,commodity_photo,commodity_ident from tb_commodity where buyer_id=?";
         return DBUtils.getList(Commodity.class,sql,user.getUser_id());
     }
+    public List<Commodity> getIdentCommodity(int ident){
+        String sql="select commodity_id,buyer_id,seller_id,commodity_name,commodity_introduce,commodity_deposit,commodity_price,commodity_startTime,commodity_endTime,commodity_photo,commodity_ident from tb_commodity where commodity_ident=?";
+        return DBUtils.getList(Commodity.class,sql,ident);
+    }
     public List<Commodity> getMyCommodity(User user){
         String sql="select commodity_id,buyer_id,seller_id,commodity_name,commodity_introduce,commodity_deposit,commodity_price,commodity_startTime,commodity_endTime,commodity_photo,commodity_ident from tb_commodity where seller_id=?";
         return DBUtils.getList(Commodity.class,sql,user.getUser_id());
@@ -47,7 +51,11 @@ public class CommodityDao {
         return DBUtils.delObj(sql,commodity_id);
     }
     public boolean updateCommodity(Commodity commodity) {
-        String sql="update tb_commodity set commodity_name=?,commodity_introduce=?,commodity_deposit=?,commodity_price=?,commodity_startTime=?,commodity_endTime=?,commodity_photo=? where commodity_id=?";
-        return DBUtils.update(sql,commodity.getCommodity_name(),commodity.getCommodity_introduce(),commodity.getCommodity_deposit(),commodity.getCommodity_price(),commodity.getCommodity_startTime(),commodity.getCommodity_endTime(),commodity.getCommodity_photo(),commodity.getCommodity_id());
+        String sql="update tb_commodity set commodity_name=?,commodity_introduce=?,commodity_deposit=?,commodity_price=?,commodity_startTime=?,commodity_endTime=?,commodity_photo=?,commodity_ident=? where commodity_id=?";
+        return DBUtils.update(sql,commodity.getCommodity_name(),commodity.getCommodity_introduce(),commodity.getCommodity_deposit(),commodity.getCommodity_price(),commodity.getCommodity_startTime(),commodity.getCommodity_endTime(),commodity.getCommodity_photo(),commodity.getCommodity_ident(),commodity.getCommodity_id());
+    }
+    public boolean updateIdentCommodity(Integer commodity_id) {
+        String sql="update tb_commodity set commodity_ident=? where commodity_id=?";
+        return DBUtils.update(sql,1,commodity_id);
     }
 }

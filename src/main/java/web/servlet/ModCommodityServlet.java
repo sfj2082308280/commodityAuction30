@@ -36,10 +36,10 @@ public class ModCommodityServlet extends HttpServlet {
         ServletContext servletContext = request.getServletContext();
         String name = request.getParameter("name");
         String introduce = request.getParameter("introduce");
-        Double deposit = Double.parseDouble(request.getParameter("deposit"));
         Double price = Double.parseDouble(request.getParameter("price"));
         String startTimeStr = request.getParameter("startTime");
         String endTimeStr = request.getParameter("endTime");
+        String ident = request.getParameter("ident");
         Date startTime=null;
         Date endTime=null;
         SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
@@ -55,10 +55,12 @@ public class ModCommodityServlet extends HttpServlet {
             Commodity modCommodity = (Commodity)servletContext.getAttribute("modCommodity");
             modCommodity.setCommodity_name(name);
             modCommodity.setCommodity_introduce(introduce);
-            modCommodity.setCommodity_deposit(deposit);
             modCommodity.setCommodity_price(price);
             modCommodity.setCommodity_startTime(startTime);
             modCommodity.setCommodity_endTime(endTime);
+            if(ident.equals("notIdent")){
+                modCommodity.setCommodity_ident(0);
+            }
             CommodityService commodityService = new CommodityService();
             commodityService.updateCommodity(modCommodity);
             servletContext.setAttribute("modCommodity",modCommodity);

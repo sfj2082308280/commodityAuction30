@@ -1,0 +1,73 @@
+* {
+				padding: 0px;
+				margin: 0px;
+				list-style: none;
+				text-decoration: none;
+			}
+
+			.shop img {
+				background-color: red;
+				width: 200px;
+				height: 200px;
+			}
+
+			div ul .shop_li {
+				width: 236px;
+				height: 368px;
+				display: inline-block;
+				vertical-align: top;
+			}
+
+			.shop a {
+				width: 234px;
+				height: 366px;
+				display: inline-block;
+				box-sizing: border-box;
+				padding: 22px 20px 0;
+				border: #EEEEEE;
+				border: 1px solid #f2f2f2;
+				position: relative;
+			}
+			.shop .borderRed{
+				border: 1px solid red;
+			}
+			.coupon-price-title,
+			.coupon-price-afterCoupon {
+				display: inline-block;
+				color: #fd3f31;
+				font-size: 18px;
+			}
+
+			.coupon-price-old {
+				font-size: 14px;
+				color: #9b9b9b;
+				text-decoration: line-through;
+			}
+
+			.shop .shop_ul li .title-text{
+				vertical-align: middle;
+				white-space: normal;
+				line-height: 20px;
+				cursor: pointer;
+				overflow: hidden;
+				color: #9b9b9b;
+				padding: 22px 20px 0;
+			}
+			.num {
+				position: absolute;
+				border-top: 1px solid #f2f2f2;
+				top: 340px;
+
+			}
+			.price{
+				position: absolute;
+				border-top: 1px solid #f2f2f2;
+				top: 310px;
+			}
+			.text-size{
+				position: absolute;
+				overflow:hidden;
+				width: 200px;
+				height: 80px;
+				word-break: normal;
+			}

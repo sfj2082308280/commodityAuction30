@@ -44,8 +44,9 @@
 			xhr.open("POST",url,true);
 			xhr.onreadystatechange=function () {
 				if(xhr.readyState==4&&xhr.status==200){
+					var responseObj=eval("("+xhr.responseText+")")
 					document.getElementById("accountValidate").innerHTML=
-							xhr.responseText;
+							responseObj.reg;
 				}
 			};
 			xhr.setRequestHeader("Content-Length",content.length);
@@ -75,7 +76,9 @@
 					<input id="address" required="required" placeholder="请填写收货地址" class="address_text" type="text" name="address">
 				</div>
 				<input type="submit" name="register" value="注 册"  />
+				<a href="/registerServlet">返 回</a>
 			</div>
 		</form>
+
 	</body>
 </html>

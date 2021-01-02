@@ -46,7 +46,7 @@
                 <c:if test="${user.user_id==commodity.buyer_id}">
                     <tr>
                         <td>
-                            <img width="100px" height="100px" src="../img/${commodity.commodity_photo}">
+                            <img width="100px" height="100px" src="../../../img/${commodity.commodity_photo}">
                             <span>
                                 ${commodity.commodity_name}
                             </span>

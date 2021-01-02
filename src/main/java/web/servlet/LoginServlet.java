@@ -1,8 +1,10 @@
 package web.servlet;
 
 import Dao.UserDao;
+import bean.Administrator;
 import bean.Commodity;
 import bean.User;
+import service.AdService;
 import service.CommodityService;
 import service.UserService;
 
@@ -25,11 +27,12 @@ public class LoginServlet extends HttpServlet {
         String account = request.getParameter("account");
         String password = request.getParameter("password");
         String type=request.getParameter("type");
-        UserService userService = new UserService();
-        User user=userService.getUserByEmailAndPassword(account,password);
-        ServletContext servletContext = request.getServletContext();
-        servletContext.setAttribute("user",user);
+
         if(type.equals("account")){
+            UserService userService = new UserService();
+            User user=userService.getUserByEmailAndPassword(account,password);
+            ServletContext servletContext = request.getServletContext();
+            servletContext.setAttribute("user",user);
             if(user!=null){
                 CommodityService commodityService = new CommodityService();
                 List<Commodity> commodityLink=commodityService.getAllCommodity();
@@ -46,9 +49,27 @@ public class LoginServlet extends HttpServlet {
                 writer.close();
             }
         }else if(type.equals("administrator")){
-            List<User> userList = userService.getAllUser();
-            servletContext.setAttribute("userList",userList);
-            response.sendRedirect("ad/adAccount.jsp");
+            AdService adService = new AdService();
+            Administrator adUser = adService.getAdUserByEmailAndPassword(account, password);
+            if(adUser!=null){
+                ServletContext servletContext = request.getServletContext();
+                servletContext.setAttribute("adUser",adUser);
+                UserService userService = new UserService();
+                List<User> userList = userService.getAllUser();
+                servletContext.setAttribute("userList",userList);
+                response.sendRedirect("ad/adAccount.jsp");
+            }
+            else{
+                PrintWriter writer = response.getWriter();
+                writer.write("<script>");
+                writer.write("alert('密码或账号不对！');");
+                writer.write("window.location.href='loginAndRegister/login.jsp'");
+                writer.write("</script>");
+                writer.flush();
+                writer.close();
+            }
+
+
         }
 
 

@@ -66,7 +66,7 @@
     </style>
 </head>
 <body>
-<iframe src="../user/function/top.html" width="100%" height="100" scrolling="no" frameborder="0"></iframe>
+<iframe src="../top.html" width="100%" height="100" scrolling="no" frameborder="0"></iframe>
 <div class="login">
     <img class="background" src="../user/function/img/loginBackground.jpg" >
     <img class="log" src="../user/function/img/loginLog2.png" >

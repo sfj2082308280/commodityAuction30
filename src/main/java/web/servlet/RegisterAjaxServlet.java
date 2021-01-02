@@ -20,13 +20,15 @@ public class RegisterAjaxServlet extends HttpServlet {
         //获取前台提交的email和密码
         String account = request.getParameter("account");
         String type=request.getParameter("type");
+//        String reg="{\"reg\":\"账号已被注册！\"}";
         UserDao userDao = new UserDao();
         if("accountAjaxValidate".equals(type)){
             Integer count = userDao.getUserAccountNum(account);
             if(count>0){
+                String reg="{\"reg\":\"账号已被注册！\"}";
                 //数据库中已经由相同email的用户
                 //通过response对象给客户端一个错误提示
-                out.print("账号已被注册！");
+                out.print(reg);
 //            PrintWriter writer = response.getWriter();
 //            writer.write("<script>");
 //            writer.write("alert('申请注册的email已经被占用！');");
@@ -34,6 +36,10 @@ public class RegisterAjaxServlet extends HttpServlet {
 //            writer.write("</script>");
 //            writer.flush();
 //            writer.close();
+            }
+            else {
+                String reg="{\"reg\":\"账号可注册！\"}";
+                out.print(reg);
             }
         }
     }

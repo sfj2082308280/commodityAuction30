@@ -24,8 +24,11 @@
         <input class="introduce_text" type="text" name="introduce" value="${modCommodity.commodity_introduce}" required="required">
     </div>
     <div>
-        <label class="deposit_word">押金：</label>
-        <input class="deposit_text"  type="text" name="deposit" value="${modCommodity.commodity_deposit}" required="required">
+        <label class="introduce_word">认证：</label>
+        <input type="radio" name="ident" checked value="ident">
+        <p></p>
+        <label class="introduce_word">下架：</label>
+        <input type="radio" name="ident" value="notIdent">
     </div>
     <div>
         <label class="price_word">当前竞拍价：</label>

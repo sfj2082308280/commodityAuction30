@@ -46,6 +46,10 @@ public class MenuServlet extends HttpServlet {
             response.sendRedirect("user/function/put.jsp");
         }else if(path==4){
             response.sendRedirect("user/function/matters.jsp");
+        }else if(path==5){
+            User user1=null;
+            servletContext.setAttribute("user",user1);
+            response.sendRedirect("loginAndRegister/login.jsp");
         }
     }
 }

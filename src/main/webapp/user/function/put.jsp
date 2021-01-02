@@ -22,10 +22,6 @@
         <input class="introduce_text" required="required" type="text" name="introduce">
     </div>
     <div>
-        <label class="deposit_word">押金：</label>
-        <input class="deposit_text" required="required" type="text" name="deposit">
-    </div>
-    <div>
         <label class="price_word">当前竞拍价：</label>
         <input class="price_text" required="required" type="text" name="price">
     </div>

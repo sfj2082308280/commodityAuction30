@@ -33,25 +33,20 @@ public class RegisterServlet extends HttpServlet {
             PrintWriter writer = response.getWriter();
             writer.write("<script>");
             writer.write("alert('申请注册的email已经被占用！');");
-//            writer.write("window.location.href='WEB-INF/loginAndRegister/register.jsp'");
+            writer.write("window.location.href='loginAndRegister/register.jsp'");
             writer.write("</script>");
             writer.flush();
             writer.close();
-            RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/loginAndRegister/register.jsp");
-            dispatcher.forward(request,response);
+//            response.sendRedirect("loginAndRegister/register.jsp");
 
         }
         else{
-            //flag是否注册成功
 
-            boolean flag=userService.saveUser(user);
-            if(flag){
-                //注册成功就跳转到登录页面 重定向
+            if(account!=null){
+                userService.saveUser(user);
                 response.sendRedirect("loginAndRegister/login.jsp");
             }else {
-                //注册失败就返回注册页面 请求转发
-                RequestDispatcher dispatcher = request.getRequestDispatcher("loginAndRegister/register.jsp");
-                dispatcher.forward(request,response);
+                response.sendRedirect("loginAndRegister/login.jsp");
             }
         }
     }

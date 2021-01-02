@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: Administrator
-  Date: 2021/1/1
-  Time: 14:37
+  Date: 2021/1/2
+  Time: 11:28
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -36,29 +36,29 @@
 </head>
 <body>
 <jsp:include page="adMenu.jsp"></jsp:include>
-<div class="title">竞拍单</div>
+<div class="title">认证单</div>
 <div class="div_table">
     <table rules="all">
         <tr>
             <td align="center" valign="center">产品</td>
             <td class="title_price" align="center" valign="center">竞拍价</td>
         </tr>
-        <c:forEach items="${commodityLink}" var="commodity">
-        <tr>
-            <td>
-                <img width="100px" height="100px" src="../img/${commodity.commodity_photo}">
-                <span>
-                        ${commodity.commodity_name}
-						</span>
-            </td>
-            <td align="center" valign="center">
-                <span class="coupon-price-title">¥</span>
-                <span class="coupon-price-afterCoupon">${commodity.commodity_price}</span>
-            </td>
-<%--            <td><a href="/adAccountServlet?run=add&user_id=${item.user_id}">增加</a></td>--%>
-            <td><a href="/adCommodityServlet?run=del&commodity_id=${commodity.commodity_id}">删除</a></td>
-            <td><a href="/adCommodityServlet?run=mod&commodity_id=${commodity.commodity_id}">修改</a></td>
-        </tr>
+        <c:forEach items="${identCommodityList}" var="commodity">
+            <tr>
+                <td>
+                    <img width="100px" height="100px" src="../img/${commodity.commodity_photo}">
+                    <span>
+                            ${commodity.commodity_name}
+                    </span>
+                </td>
+                <td align="center" valign="center">
+                    <span class="coupon-price-title">¥</span>
+                    <span class="coupon-price-afterCoupon">${commodity.commodity_price}</span>
+                </td>
+                    <%--            <td><a href="/adAccountServlet?run=add&user_id=${item.user_id}">增加</a></td>--%>
+                <td><a href="/identCommodityServlet?run=del&commodity_id=${commodity.commodity_id}">删除</a></td>
+                <td><a href="/identCommodityServlet?run=ident&commodity_id=${commodity.commodity_id}">认证</a></td>
+            </tr>
         </c:forEach>
     </table>
 </div>

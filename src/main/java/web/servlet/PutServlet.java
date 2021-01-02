@@ -53,7 +53,6 @@ public class PutServlet extends HttpServlet {
         }
         String name = request.getParameter("name");
         String introduce = request.getParameter("introduce");
-        Double deposit=Double.parseDouble(request.getParameter("deposit"));
         Double price = Double.parseDouble(request.getParameter("price"));
         SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
         String startTimeStr=request.getParameter("startTime");
@@ -69,7 +68,7 @@ public class PutServlet extends HttpServlet {
         try {
             Part part = request.getPart("photo");
             String fileName=part.getSubmittedFileName();
-            String dir=this.getServletContext().getRealPath("/user/function/img");
+            String dir=this.getServletContext().getRealPath("/img");
             File photoDir = new File(dir);
             if(!photoDir.exists()){
                 photoDir.mkdirs();
@@ -77,7 +76,7 @@ public class PutServlet extends HttpServlet {
             //上传到服务器文件路径 imgDir+'/'+fileName
             part.write(dir+"/"+fileName);
             User user = (User) request.getServletContext().getAttribute("user");
-            Commodity commodity= new Commodity(null, null,user.getUser_id(),name,introduce,deposit,price,startTime,endTime,fileName,1);
+            Commodity commodity= new Commodity(null, null,user.getUser_id(),name,introduce,null,price,startTime,endTime,fileName,0);
             CommodityService commodityService = new CommodityService();
             commodityService.saveCommodity(commodity);
         } catch (IOException e) {

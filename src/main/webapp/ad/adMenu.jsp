@@ -75,6 +75,9 @@
         .drop_list5 .borderRed{
             border: gold 100px solid;
         }
+        .out{
+            float: right;
+        }
     </style>
 </head>
 <body>
@@ -82,10 +85,8 @@
     <ul class="show_1">
         <li><a href="/adMenuServlet?path=1">用户账号管理</a></li>
         <li><a href="/adMenuServlet?path=2">商品管理</a></li>
-        <li><a href="/adMenuServlet?path=3">押金处理</a></li>
-        <li><a href="/adMenuServlet?path=4">竞拍数据统计</a></li>
-        <li><a href="/adMenuServlet?path=5">结算账单</a></li>
-        <li><a href="/adMenuServlet?path=6">认证竞拍品</a></li>
+        <li><a href="/adMenuServlet?path=3">认证竞拍品</a></li>
+        <li class="out"><a href="/adMenuServlet?path=4"><h4 align="right">退出登录</h4></a></li>
         <div></div>
     </ul>
 </div>

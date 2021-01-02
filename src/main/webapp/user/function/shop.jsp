@@ -8,8 +8,8 @@
 <head>
     <meta charset="utf-8">
     <title></title>
-    <link rel="stylesheet" type="text/css" href="实验/css/font-awesome.css" />
-<%--    <link rel="stylesheet" type="text/css" href="css/shop.css"/>--%>
+<%--    <link rel="stylesheet" type="text/css" href="../../css/font-awesome.css" />--%>
+<%--    <link rel="stylesheet" type="text/css" href="../../css/shop.css"/>--%>
     <style type="text/css">
         * {
             padding: 0px;
@@ -106,8 +106,8 @@
 
         <c:forEach items="${commodityLink}" var="commodity">
             <li class="shop_li">
-                <a class="shop_a" href="/shopServlet?path=img/${commodity.commodity_photo}&name=${commodity.commodity_name}&price=${commodity.commodity_price}&commodity_id=${commodity.commodity_id}">
-                    <img class="shop_img" src="img/${commodity.commodity_photo}" alt="">
+                <a class="shop_a" href="/shopServlet?path=../../img/${commodity.commodity_photo}&name=${commodity.commodity_name}&price=${commodity.commodity_price}&commodity_id=${commodity.commodity_id}">
+                    <img class="shop_img" src="../../img/${commodity.commodity_photo}" alt="">
                     <div class="text-size">
                         <span class="title-text">${commodity.commodity_name}</span>
                     </div>
@@ -129,7 +129,15 @@
         </c:forEach>
     </ul>
 </div>
-<script src="js/shop.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/shop.js" type="text/javascript" charset="utf-8"></script>
+<%--<script type="text/javascript">--%>
+<%--    $('.shop a').hover(function(){--%>
+<%--        $(this).addClass("borderRed");--%>
+<%--    },function(){--%>
+<%--        $(this).removeClass("borderRed");--%>
+<%--    })--%>
+<%--</script>--%>
 </body>
 
 </html>

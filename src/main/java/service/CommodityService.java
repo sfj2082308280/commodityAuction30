@@ -33,4 +33,10 @@ public class CommodityService {
     public boolean updateCommodity(Commodity commodity) {
         return commodityDao.updateCommodity(commodity);
     }
+    public List<Commodity> getIdentCommodity(int ident){
+        return commodityDao.getIdentCommodity(ident);
+    }
+    public boolean updateIdentCommodity(Integer commodity_id) {
+        return commodityDao.updateIdentCommodity(commodity_id);
+    }
 }

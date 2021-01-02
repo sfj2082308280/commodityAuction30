@@ -75,6 +75,9 @@
         .drop_list5 .borderRed{
             border: gold 100px solid;
         }
+        .out{
+            float: right;
+        }
     </style>
 </head>
 <body>
@@ -87,12 +90,12 @@
                     <li><a href="/menuServlet?path=21">账号基本信息界面</a></li>
                     <li><a href="/menuServlet?path=22">查看竞拍的商品界面</a></li>
                     <li><a href="/menuServlet?path=23">查看上架的竞拍品界面</a></li>
-                    <li><a href="/menuServlet?path=24">确认收款界面</a></li>
                 </ul>
             </div>
         </li>
         <li><a href=/menuServlet?path=3>上架界面</a></li>
         <li><a href="/menuServlet?path=4">竞拍事项界面</a></li>
+        <li class="out"><a href="/menuServlet?path=5"><h4 align="right">退出登录</h4></a></li>
         <div></div>
     </ul>
 </div>
