@@ -68,15 +68,15 @@
 <body>
 <iframe src="../top.html" width="100%" height="100" scrolling="no" frameborder="0"></iframe>
 <div class="login">
-    <img class="background" src="../user/function/img/loginBackground.jpg" >
-    <img class="log" src="../user/function/img/loginLog2.png" >
+    <img class="background" src="../img/loginBackground.jpg" >
+    <img class="log" src="../img/loginLog2.png" >
     <div class="login_show">
         <form action="loginServlet" method="post">
             <div>
                 <span class="name">商品竞拍系统</span>
             </div>
             <div class="type">
-                <label class="acount_type">用户</label><input class="account_text" checked type="radio" name="type" value="account">
+                <label class="acount_type">用户</label><input class="account_text" checked type="radio" name="type" value="account">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <label class="administrator_type">管理员</label><input class="administrator_text" type="radio" name="type" value="administrator">
             </div>
             <div class="account">

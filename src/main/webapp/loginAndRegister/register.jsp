@@ -64,7 +64,7 @@
 					<label style="color: #ff0000"  id="accountValidate"></label>
 				</div>
 				<div class="password">
-					<input id="email" required="required" placeholder="请填写密码" class="password_text" type="password" name="password">
+					<input id="password" required="required" placeholder="请填写密码" class="password_text" type="password" name="password">
 				</div>
 				<div class="idCard">
 					<input id="idCard" required="required" placeholder="请填写身份证" class="idCard_text" type="text" name="idCard">
