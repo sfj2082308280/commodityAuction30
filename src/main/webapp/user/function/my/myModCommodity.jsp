@@ -24,6 +24,10 @@
         <input class="introduce_text" type="text" name="introduce" value="${myModCommodity.commodity_introduce}" required="required">
     </div>
     <div>
+        <label class="startTime_word">开始竞拍日期：</label>
+        <input class="startTime_text" type="text" name="startTime" value="<fmt:formatDate value="${myModCommodity.commodity_startTime}" pattern="yyyy-MM-dd"></fmt:formatDate>" required="required">
+    </div>
+    <div>
         <label class="endTime_word">结束竞拍日期：</label>
         <input class="endTime_text"  type="text" name="endTime" value="<fmt:formatDate value="${myModCommodity.commodity_endTime}" pattern="yyyy-MM-dd"></fmt:formatDate>" required="required">
     </div>

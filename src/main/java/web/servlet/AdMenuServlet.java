@@ -2,8 +2,10 @@ package web.servlet;
 
 import bean.Administrator;
 import bean.Commodity;
+import bean.Deposit;
 import bean.User;
 import service.CommodityService;
+import service.DepositService;
 import service.UserService;
 
 import javax.servlet.ServletContext;
@@ -44,6 +46,12 @@ public class AdMenuServlet extends HttpServlet {
             Administrator adUser = null;
             servletContext.setAttribute("adUser",adUser);
             response.sendRedirect("loginAndRegister/login.jsp");
+        }
+        else if(path==5){
+            DepositService depositService = new DepositService();
+            List<Deposit> depositList = depositService.getAllDeposit();
+            servletContext.setAttribute("depositList",depositList);
+            response.sendRedirect("ad/adDeposit.jsp");
         }
     }
 }

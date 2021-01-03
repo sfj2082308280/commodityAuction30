@@ -48,6 +48,10 @@
 			text-align: center;
 			line-height: 38px;
 		}
+		.shopImg img{
+			width: 400px;
+			height: 400px;
+		}
 	</style>
 </head>
 <body>
@@ -66,7 +70,11 @@
 		</div>
 		<div class="buy">
 			<form action="/shopShowServlet">
+				<span>交付押金${sessionScope.commodity_deposit}元</span>
+				<input type="checkbox" value="deposit" name="deposit">
+				<div></div>
 				<span>加价竞拍</span><input type="text" name="price"><span>元</span>
+				<input type="hidden" name="commodity_deposit" value="${sessionScope.commodity_deposit}"/>
 				<input type="hidden" name="commodity_id" value="${sessionScope.commodity_id}"/>
 				<input type="hidden" name="name" value="${sessionScope.name}"/>
 				<input type="submit" value="立即竞拍">

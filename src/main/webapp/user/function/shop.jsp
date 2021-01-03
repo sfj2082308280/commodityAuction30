@@ -106,7 +106,7 @@
 
         <c:forEach items="${commodityLink}" var="commodity">
             <li class="shop_li">
-                <a class="shop_a" href="/shopServlet?path=../../img/${commodity.commodity_photo}&name=${commodity.commodity_name}&price=${commodity.commodity_price}&commodity_id=${commodity.commodity_id}">
+                <a class="shop_a" href="/shopServlet?path=../../img/${commodity.commodity_photo}&name=${commodity.commodity_name}&price=${commodity.commodity_price}&commodity_id=${commodity.commodity_id}&commodity_deposit=${commodity.commodity_deposit}">
                     <img class="shop_img" src="../../img/${commodity.commodity_photo}" alt="">
                     <div class="text-size">
                         <span class="title-text">${commodity.commodity_name}</span>

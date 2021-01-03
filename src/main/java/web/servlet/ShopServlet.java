@@ -26,8 +26,10 @@ public class ShopServlet extends HttpServlet {
         String path = request.getParameter("path");
         String name=request.getParameter("name");
         String price=request.getParameter("price");
+        String commodity_deposit=request.getParameter("commodity_deposit");
         Integer commodity_id = Integer.parseInt(request.getParameter("commodity_id"));
         HttpSession session = request.getSession();
+        session.setAttribute("commodity_deposit",commodity_deposit);
         session.setAttribute("commodity_id",commodity_id);
         session.setAttribute("name",name);
         session.setAttribute("path",path);

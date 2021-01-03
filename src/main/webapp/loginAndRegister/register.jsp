@@ -79,6 +79,5 @@
 				<a href="/registerServlet">返 回</a>
 			</div>
 		</form>
-
 	</body>
 </html>

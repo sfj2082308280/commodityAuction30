@@ -38,15 +38,19 @@ public class MyModCommodityServlet extends HttpServlet {
         ServletContext servletContext = request.getServletContext();
         String name = request.getParameter("name");
         String introduce = request.getParameter("introduce");
+        String startTimeStr = request.getParameter("startTime");
         String endTimeStr = request.getParameter("endTime");
         Date endTime=null;
+        Date startTime=null;
         SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
         try {
             endTime=sdf.parse(endTimeStr);
+            startTime=sdf.parse(startTimeStr);
             Commodity myModCommodity = (Commodity)servletContext.getAttribute("myModCommodity");
             myModCommodity.setCommodity_name(name);
             myModCommodity.setCommodity_introduce(introduce);
             myModCommodity.setCommodity_endTime(endTime);
+            myModCommodity.setCommodity_startTime(startTime);
             CommodityService commodityService = new CommodityService();
             commodityService.updateCommodity(myModCommodity);
             servletContext.setAttribute("myModCommodity",myModCommodity);

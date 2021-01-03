@@ -86,7 +86,9 @@
         <li><a href="/adMenuServlet?path=1">用户账号管理</a></li>
         <li><a href="/adMenuServlet?path=2">商品管理</a></li>
         <li><a href="/adMenuServlet?path=3">认证竞拍品</a></li>
+        <li><a href="/adMenuServlet?path=5">押金管理</a></li>
         <li class="out"><a href="/adMenuServlet?path=4"><h4 align="right">退出登录</h4></a></li>
+
         <div></div>
     </ul>
 </div>
