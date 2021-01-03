@@ -12,31 +12,6 @@
 		<meta charset="utf-8">
 		<title>商品竞拍注册界面</title>
 	<script>
-		// function validate() {
-		// 	var account =document.getElementById("account").value;
-		// 	var password =document.getElementById("password").value;
-		// 	console.log(account);
-		// 	//验证邮箱合法
-		// 	// alert(email);
-		// 	// alert(password);
-		// 	// var pattern=/^([a-zA-Z]|[0-9])(\w|\-)+@[a-zA-Z0-9]+\.([a-zA-Z]{2,4})$/;
-		// 	if(account==''){
-		// 		alert("account不能为空!");
-		// 		return false;
-		// 	}else if(account.length<6||account.length>12){
-		// 		alert("account长度在6-8个字符之间!");
-		// 		return false;
-		// 	}
-		// 	//验证password
-		// 	if(password=='') {
-		// 		alert("password不能为空!");
-		// 		return false;
-		// 	}else if(password.length<6||password.length>12){
-		// 		alert("密码长度在6-8个字符之间!");
-		// 		return false;
-		// 	}
-		// 	return true;
-		// }
 		var xhr=new XMLHttpRequest();
 		function ajaxValidate(accountObj) {
 			var url="../registerAjaxServlet";

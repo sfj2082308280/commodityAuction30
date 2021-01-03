@@ -1,8 +1,10 @@
 package web.servlet;
 
 import bean.Commodity;
+import bean.Deposit;
 import bean.User;
 import service.CommodityService;
+import service.DepositService;
 import service.UserService;
 
 import javax.servlet.ServletContext;
@@ -37,6 +39,9 @@ public class AdCommodityServlet extends HttpServlet {
             commodityService.delCommodity(commodity_id);
             List<Commodity> commodityLink = commodityService.getAllCommodity();
             servletContext.setAttribute("commodityLink",commodityLink);
+            DepositService depositService = new DepositService();
+            Deposit singleDeposit = depositService.getSingleDeposit(commodity_id);
+            depositService.delDeposit(singleDeposit.getDeposit_id());
             response.sendRedirect("ad/adCommodity.jsp");
         }
     }

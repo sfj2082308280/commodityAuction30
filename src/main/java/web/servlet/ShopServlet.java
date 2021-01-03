@@ -16,8 +16,6 @@ import java.io.IOException;
 @WebServlet(urlPatterns = "/shopServlet")
 public class ShopServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/shop.jsp");
-        dispatcher.forward(request,response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -28,6 +26,7 @@ public class ShopServlet extends HttpServlet {
         String price=request.getParameter("price");
         String commodity_deposit=request.getParameter("commodity_deposit");
         Integer commodity_id = Integer.parseInt(request.getParameter("commodity_id"));
+//        HttpSession session request.getSession();
         HttpSession session = request.getSession();
         session.setAttribute("commodity_deposit",commodity_deposit);
         session.setAttribute("commodity_id",commodity_id);

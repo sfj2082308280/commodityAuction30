@@ -1,10 +1,8 @@
 package web.servlet;
 
-import bean.Bid;
 import bean.Commodity;
 import bean.Deposit;
 import bean.User;
-import service.BidService;
 import service.CommodityService;
 import service.DepositService;
 
@@ -33,7 +31,6 @@ public class ShopShowServlet extends HttpServlet {
         String deposit = request.getParameter("deposit");
         String name=request.getParameter("name");
         CommodityService commodityService = new CommodityService();
-
         Commodity commodity = commodityService.getSingleCommodity(commodity_id);
         if(user.getUser_id().equals(commodity.getSeller_id())){
             PrintWriter writer = response.getWriter();
@@ -43,7 +40,16 @@ public class ShopShowServlet extends HttpServlet {
             writer.write("</script>");
             writer.flush();
             writer.close();
-        }else if("deposit".equals(deposit)){
+        }else if(price<=0){
+            PrintWriter writer = response.getWriter();
+            writer.write("<script>");
+            writer.write("alert('请合理竞拍！');");
+            writer.write("window.location.href='user/function/shop.jsp'");
+            writer.write("</script>");
+            writer.flush();
+            writer.close();
+        }
+        else if("deposit".equals(deposit)){
             commodityService.updateAddPrice(commodity_id,user.getUser_id(),price);
             List<Commodity> commodityLink=commodityService.getAllCommodity();
             Commodity commodity1 = commodityService.getSingleCommodity(commodity_id);

@@ -26,7 +26,6 @@ public class MenuServlet extends HttpServlet {
         User user = (User)servletContext.getAttribute("user");
         int path = Integer.parseInt(request.getParameter("path"));
         if(path==1){
-
             List<Commodity> commodityLink=commodityService.getAllCommodity();
             servletContext.setAttribute("commodityLink",commodityLink);
             response.sendRedirect("user/function/shop.jsp");
@@ -40,8 +39,6 @@ public class MenuServlet extends HttpServlet {
             List<Commodity> myCommodity = commodityService.getMyCommodity(user);
             servletContext.setAttribute("myCommodity",myCommodity);
             response.sendRedirect("user/function/my/myCommodity.jsp");
-        }else if(path==24){
-
         }else if(path==3){
             response.sendRedirect("user/function/put.jsp");
         }else if(path==4){

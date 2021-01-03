@@ -66,6 +66,7 @@ public class PutServlet extends HttpServlet {
         } catch (ParseException e) {
             e.printStackTrace();
         }
+        //使用part，write文件
         try {
             Part part = request.getPart("photo");
             String fileName=part.getSubmittedFileName();

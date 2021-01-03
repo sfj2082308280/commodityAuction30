@@ -1,7 +1,6 @@
-<%@ page import="service.BidService" %>
 <%@ page import="service.CommodityService" %>
 <%@ page import="bean.Commodity" %>
-<%@ page import="bean.Bid" %><%--
+<%--
   Created by IntelliJ IDEA.
   User: Administrator
   Date: 2020/12/31

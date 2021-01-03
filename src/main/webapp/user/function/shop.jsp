@@ -8,8 +8,6 @@
 <head>
     <meta charset="utf-8">
     <title></title>
-<%--    <link rel="stylesheet" type="text/css" href="../../css/font-awesome.css" />--%>
-<%--    <link rel="stylesheet" type="text/css" href="../../css/shop.css"/>--%>
     <style type="text/css">
         * {
             padding: 0px;
@@ -90,20 +88,6 @@
 <jsp:include page="menu.jsp"></jsp:include>
 <div class="shop">
     <ul class="shop_ul">
-<%--        <c:set var="str" value="Hello"></c:set>--%>
-<%--        <c:out value="${str}"></c:out>--%>
-<%--        <c:if test="${1==1}">--%>
-<%--            <p>asdawd</p>--%>
-<%--        </c:if>--%>
-<%--        <%--%>
-<%--             String arrays[] =new String[5];--%>
-<%--             arrays[0]="hellow";--%>
-<%--             arrays[1]=",";--%>
-<%--             arrays[2]="everyone";--%>
-<%--             arrays[3]="!";--%>
-<%--             request.setAttribute("arrays",arrays);--%>
-<%--        %>--%>
-
         <c:forEach items="${commodityLink}" var="commodity">
             <li class="shop_li">
                 <a class="shop_a" href="/shopServlet?path=../../img/${commodity.commodity_photo}&name=${commodity.commodity_name}&price=${commodity.commodity_price}&commodity_id=${commodity.commodity_id}&commodity_deposit=${commodity.commodity_deposit}">
@@ -115,11 +99,6 @@
                         <span class="coupon-price-title">¥</span>
                         <span class="coupon-price-afterCoupon">${commodity.commodity_price}</span>
                     </div>
-<%--                    <div>--%>
-<%--                        <div class="seller-name">--%>
-<%--                            五三金典图书专营店--%>
-<%--                        </div>--%>
-<%--                    </div>--%>
                     <div class="num">
                         <div class="item-tags"></div>
                         <div class="sell-info">${commodity.commodity_introduce}</div>
@@ -131,13 +110,6 @@
 </div>
 <script src="../../js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
 <script src="../../js/shop.js" type="text/javascript" charset="utf-8"></script>
-<%--<script type="text/javascript">--%>
-<%--    $('.shop a').hover(function(){--%>
-<%--        $(this).addClass("borderRed");--%>
-<%--    },function(){--%>
-<%--        $(this).removeClass("borderRed");--%>
-<%--    })--%>
-<%--</script>--%>
 </body>
 
 </html>

@@ -1,20 +1,11 @@
 package web.servlet;
 
-import bean.Bid;
-import bean.Commodity;
-import bean.User;
-import service.BidService;
-import service.CommodityService;
-
-import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.List;
 
 @WebServlet(urlPatterns = "/myBidServlet")
 public class MyBidServlet extends HttpServlet {

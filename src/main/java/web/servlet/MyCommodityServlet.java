@@ -1,8 +1,10 @@
 package web.servlet;
 
 import bean.Commodity;
+import bean.Deposit;
 import bean.User;
 import service.CommodityService;
+import service.DepositService;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -26,6 +28,9 @@ public class MyCommodityServlet extends HttpServlet {
         if(modOrDel.equals("del")){
             commodityService.delCommodity(commodity_id);
             ServletContext servletContext = request.getServletContext();
+            DepositService depositService = new DepositService();
+            Deposit singleDeposit = depositService.getSingleDeposit(commodity_id);
+            depositService.delDeposit(singleDeposit.getDeposit_id());
             User user = (User)servletContext.getAttribute("user");
             List<Commodity> myCommodity = commodityService.getMyCommodity(user);
             servletContext.setAttribute("myCommodity",myCommodity);

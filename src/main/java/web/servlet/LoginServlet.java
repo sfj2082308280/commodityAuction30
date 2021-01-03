@@ -27,18 +27,24 @@ public class LoginServlet extends HttpServlet {
         String account = request.getParameter("account");
         String password = request.getParameter("password");
         String type=request.getParameter("type");
-
+        //判断是否用户登录
         if(type.equals("account")){
+            //得到用户对象
             UserService userService = new UserService();
             User user=userService.getUserByEmailAndPassword(account,password);
+            //将用户对象存储到作用域中
             ServletContext servletContext = request.getServletContext();
             servletContext.setAttribute("user",user);
+            //判断数据库是否有此用户
             if(user!=null){
+                //取出所有认证的商品
                 CommodityService commodityService = new CommodityService();
                 List<Commodity> commodityLink=commodityService.getAllCommodity();
+                //将所有认证的商品存入作用域中
                 servletContext.setAttribute("commodityLink",commodityLink);
                 response.sendRedirect("user/function/shop.jsp");
             }
+            //密码或账号输入错误,弹出提示信息
             else{
                 PrintWriter writer = response.getWriter();
                 writer.write("<script>");
@@ -48,7 +54,10 @@ public class LoginServlet extends HttpServlet {
                 writer.flush();
                 writer.close();
             }
-        }else if(type.equals("administrator")){
+        }
+        //如果是管理员登录
+        else if(type.equals("administrator")){
+            //获取管理员对象
             AdService adService = new AdService();
             Administrator adUser = adService.getAdUserByEmailAndPassword(account, password);
             if(adUser!=null){

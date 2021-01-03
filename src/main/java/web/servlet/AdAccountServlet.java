@@ -23,9 +23,7 @@ public class AdAccountServlet extends HttpServlet {
         String run = request.getParameter("run");
         ServletContext servletContext = request.getServletContext();
         Integer user_id = Integer.parseInt(request.getParameter("user_id"));
-        if(run.equals("add")){
-
-        }else if(run.equals("mod")){
+        if(run.equals("mod")){
             UserService userService = new UserService();
             User modUser = userService.getSingleUser(user_id);
             servletContext.setAttribute("modUser",modUser);

@@ -1,8 +1,10 @@
 package web.servlet;
 
 import bean.Commodity;
+import bean.Deposit;
 import bean.User;
 import service.CommodityService;
+import service.DepositService;
 import service.UserService;
 
 import javax.servlet.ServletContext;
@@ -43,23 +45,31 @@ public class ModCommodityServlet extends HttpServlet {
         Date startTime=null;
         Date endTime=null;
         SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
+        if(price<=0){
+            price=0.0;
+        }
         try {
             startTime=sdf.parse(startTimeStr);
             endTime=sdf.parse(endTimeStr);
-            String dir=this.getServletContext().getRealPath("/user/function/img");
-            File photoDir = new File(dir);
-            if(!photoDir.exists()){
-                photoDir.mkdirs();
-            }
-            //上传到服务器文件路径 imgDir+'/'+fileName
+//            String dir=this.getServletContext().getRealPath("/user/function/img");
+//            File photoDir = new File(dir);
+//            if(!photoDir.exists()){
+//                photoDir.mkdirs();
+//            }
+//            //上传到服务器文件路径 imgDir+'/'+fileName
             Commodity modCommodity = (Commodity)servletContext.getAttribute("modCommodity");
             modCommodity.setCommodity_name(name);
             modCommodity.setCommodity_introduce(introduce);
             modCommodity.setCommodity_price(price);
             modCommodity.setCommodity_startTime(startTime);
             modCommodity.setCommodity_endTime(endTime);
+
             if(ident.equals("notIdent")){
                 modCommodity.setCommodity_ident(0);
+                modCommodity.setBuyer_id(null);
+                DepositService depositService = new DepositService();
+                Deposit singleDeposit = depositService.getSingleDeposit(modCommodity.getCommodity_id());
+                depositService.delDeposit(singleDeposit.getDeposit_id());
             }
             CommodityService commodityService = new CommodityService();
             commodityService.updateCommodity(modCommodity);

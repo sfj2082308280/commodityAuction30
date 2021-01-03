@@ -35,7 +35,7 @@
 </head>
 <body>
 <jsp:include page="adMenu.jsp"></jsp:include>
-<div class="title">用户账号</div>
+<div class="title">押金管理</div>
 <div class="div_table">
     <table rules="all">
         <tr>

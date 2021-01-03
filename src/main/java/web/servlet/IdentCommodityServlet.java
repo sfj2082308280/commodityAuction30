@@ -23,9 +23,7 @@ public class IdentCommodityServlet extends HttpServlet {
         String run = request.getParameter("run");
         ServletContext servletContext = request.getServletContext();
         Integer commodity_id = Integer.parseInt(request.getParameter("commodity_id"));
-        if(run.equals("add")){
-
-        }else if(run.equals("ident")){
+        if(run.equals("ident")){
             CommodityService commodityService = new CommodityService();
             commodityService.updateIdentCommodity(commodity_id);
             List<Commodity> commodityLink = commodityService.getAllCommodity();

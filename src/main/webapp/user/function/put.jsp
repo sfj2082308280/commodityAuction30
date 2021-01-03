@@ -32,10 +32,12 @@
     <div>
         <label class="startTime_word">开始竞拍日期：</label>
         <input class="startTime_text" required="required" type="text" name="startTime">
+        <label class="endTime_word">例如：1999-08-27</label>
     </div>
     <div>
         <label class="endTime_word">结束竞拍日期：</label>
         <input class="endTime_text" required="required" type="text" name="endTime">
+
     </div>
     <div>
         <label class="endTime_word">图片：</label>
